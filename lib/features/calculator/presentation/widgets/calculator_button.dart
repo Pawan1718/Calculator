@@ -24,31 +24,33 @@ class CalculatorButton extends StatefulWidget {
   final bool isSelected;
 
   @override
-  State<CalculatorButton> createState() => _CalculatorButtonState();
+  State<CalculatorButton> createState() {
+    return _CalculatorButtonState();
+  }
 }
 
 class _CalculatorButtonState extends State<CalculatorButton> {
   bool _isPressed = false;
 
-  Color get _backgroundColor {
+  Color _backgroundColor(BuildContext context) {
     if (widget.isSelected) {
-      return AppTheme.primaryTextColor;
+      return AppTheme.primaryText(context);
     }
 
     switch (widget.type) {
       case CalculatorButtonType.function:
-        return AppTheme.functionButtonColor;
+        return AppTheme.functionButton(context);
 
       case CalculatorButtonType.operator:
       case CalculatorButtonType.equal:
-        return AppTheme.operatorButtonColor;
+        return AppTheme.primaryColor;
 
       case CalculatorButtonType.number:
-        return AppTheme.numberButtonColor;
+        return AppTheme.numberButton(context);
     }
   }
 
-  Color get _foregroundColor {
+  Color _foregroundColor(BuildContext context) {
     if (widget.isSelected) {
       return AppTheme.primaryColor;
     }
@@ -60,7 +62,7 @@ class _CalculatorButtonState extends State<CalculatorButton> {
 
       case CalculatorButtonType.function:
       case CalculatorButtonType.number:
-        return AppTheme.primaryTextColor;
+        return AppTheme.primaryText(context);
     }
   }
 
@@ -70,6 +72,9 @@ class _CalculatorButtonState extends State<CalculatorButton> {
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = _backgroundColor(context);
+    final foregroundColor = _foregroundColor(context);
+
     return Expanded(
       flex: widget.flex,
       child: Semantics(
@@ -83,19 +88,27 @@ class _CalculatorButtonState extends State<CalculatorButton> {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 180),
             decoration: BoxDecoration(
-              color: _backgroundColor,
+              color: backgroundColor,
               borderRadius: BorderRadius.circular(
                 AppConstants.buttonBorderRadius,
               ),
-              boxShadow: widget.type == CalculatorButtonType.equal
-                  ? [
-                      BoxShadow(
-                        color: AppTheme.primaryColor.withValues(alpha: 0.22),
-                        blurRadius: 14,
-                        offset: const Offset(0, 5),
-                      ),
-                    ]
-                  : null,
+              border: AppTheme.isDark(context)
+                  ? null
+                  : Border.all(color: Colors.black.withValues(alpha: 0.04)),
+              boxShadow: [
+                if (widget.type == CalculatorButtonType.equal)
+                  BoxShadow(
+                    color: AppTheme.primaryColor.withValues(alpha: 0.22),
+                    blurRadius: 14,
+                    offset: const Offset(0, 5),
+                  )
+                else if (!AppTheme.isDark(context))
+                  BoxShadow(
+                    color: AppTheme.buttonShadow(context),
+                    blurRadius: 8,
+                    offset: const Offset(0, 3),
+                  ),
+              ],
             ),
             clipBehavior: Clip.antiAlias,
             child: Material(
@@ -119,13 +132,13 @@ class _CalculatorButtonState extends State<CalculatorButton> {
                 },
                 child: Center(
                   child: widget.icon != null
-                      ? Icon(widget.icon, size: 27, color: _foregroundColor)
+                      ? Icon(widget.icon, size: 27, color: foregroundColor)
                       : Text(
                           widget.label,
                           style: TextStyle(
                             fontSize: _fontSize,
                             fontWeight: FontWeight.w600,
-                            color: _foregroundColor,
+                            color: foregroundColor,
                           ),
                         ),
                 ),

@@ -19,7 +19,10 @@ class CalculatorDisplay extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final resultFontSize = constraints.maxWidth < 350 ? 48.0 : 60.0;
+
         final expressionFontSize = constraints.maxWidth < 350 ? 19.0 : 23.0;
+
+        final errorColor = Theme.of(context).colorScheme.error;
 
         return Container(
           width: double.infinity,
@@ -45,8 +48,8 @@ class CalculatorDisplay extends StatelessWidget {
                         fontSize: expressionFontSize,
                         fontWeight: FontWeight.w400,
                         color: hasError
-                            ? Colors.redAccent
-                            : AppTheme.secondaryTextColor,
+                            ? errorColor
+                            : AppTheme.secondaryText(context),
                       ),
                     ),
                   ),
@@ -81,8 +84,8 @@ class CalculatorDisplay extends StatelessWidget {
                         fontSize: resultFontSize,
                         fontWeight: FontWeight.w600,
                         color: hasError
-                            ? Colors.redAccent
-                            : AppTheme.primaryTextColor,
+                            ? errorColor
+                            : AppTheme.primaryText(context),
                         letterSpacing: -1.5,
                       ),
                     ),
