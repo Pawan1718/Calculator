@@ -28,10 +28,8 @@ android {
 
     defaultConfig {
         applicationId = "in.bitmint.calculator"
-
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

@@ -5,24 +5,21 @@ allprojects {
     }
 }
 
-val newBuildDir: Directory =
-    rootProject.layout.buildDirectory
-        .dir("../../build")
-        .get()
+/*
+ * Important:
+ * Flutter plugins Pub Cache me C: drive par ho sakte hain,
+ * jabki project D: drive par hai.
+ *
+ * Isliye sab subprojects ka build directory project ke D: drive
+ * par force nahi karna hai.
+ */
 
-rootProject.layout.buildDirectory.value(newBuildDir)
-
-subprojects {
-    val newSubprojectBuildDir: Directory =
-        newBuildDir.dir(project.name)
-
-    project.layout.buildDirectory.value(newSubprojectBuildDir)
-}
-
-subprojects {
-    project.evaluationDependsOn(":app")
+project(":app") {
+    layout.buildDirectory.set(
+        rootProject.layout.projectDirectory.dir("../build/app"),
+    )
 }
 
 tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
+    delete(rootProject.layout.projectDirectory.dir("../build"))
 }
