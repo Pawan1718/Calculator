@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="1024"
+    height="1024"
+    viewBox="0 0 1024 1024">
+
+    <g transform="translate(190 130)">
+        <rect
+            x="0"
+            y="0"
+            width="644"
+            height="764"
+            rx="128"
+            fill="#FFFFFF"
+        />
+
+        <rect
+            x="84"
+            y="84"
+            width="476"
+            height="176"
+            rx="64"
+            fill="#4285F4"
+        />
+
+        <rect
+            x="498"
+            y="132"
+            width="32"
+            height="78"
+            rx="16"
+            fill="#FFFFFF"
+        />
+
+        <circle cx="190" cy="406" r="92" fill="#EA4335"/>
+        <circle cx="454" cy="406" r="92" fill="#FBBC05"/>
+        <circle cx="190" cy="638" r="92" fill="#4285F4"/>
+        <circle cx="454" cy="638" r="92" fill="#34A853"/>
+
+        <path
+            d="M152 406H228M190 368V444"
+            stroke="#FFFFFF"
+            stroke-width="28"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M416 406H492"
+            stroke="#FFFFFF"
+            stroke-width="28"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M156 604L224 672M224 604L156 672"
+            stroke="#FFFFFF"
+            stroke-width="26"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M416 638H492"
+            stroke="#FFFFFF"
+            stroke-width="26"
+            stroke-linecap="round"
+        />
+
+        <circle cx="454" cy="594" r="13" fill="#FFFFFF"/>
+        <circle cx="454" cy="682" r="13" fill="#FFFFFF"/>
+    </g>
+</svg>

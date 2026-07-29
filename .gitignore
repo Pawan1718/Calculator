@@ -43,3 +43,27 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+
+# Android signing files
+android/key.properties
+*.jks
+*.keystore
+*.p12
+
+# Local Android signing backups
+android/app/*.jks
+android/app/*.keystore
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local IDE configuration
+.idea/
+*.iml
+
+# VS Code local settings
+.vscode/

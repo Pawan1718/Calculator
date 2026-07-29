@@ -29,22 +29,27 @@ flutter:
 flutter_launcher_icons:
   android: true
   ios: false
+
   image_path: "assets/branding/app_icon.png"
-  adaptive_icon_background: "#101214"
-  adaptive_icon_foreground: "assets/branding/app_icon.png"
+
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/branding/app_icon_foreground.png"
+
   min_sdk_android: 21
 
 flutter_native_splash:
-  color: "#101214"
+  color: "#FFFFFF"
   image: assets/branding/splash_logo.png
-  color_dark: "#101214"
+
+  color_dark: "#FFFFFF"
   image_dark: assets/branding/splash_logo.png
+
   android: true
   ios: false
   web: false
   fullscreen: true
 
   android_12:
-    color: "#101214"
+    color: "#FFFFFF"
     image: assets/branding/splash_logo.png
-    icon_background_color: "#101214"
+    icon_background_color: "#FFFFFF"
