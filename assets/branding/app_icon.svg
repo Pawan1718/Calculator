@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="220" fill="#F8FAFD"/>
+
+  <g filter="url(#shadow)">
+    <rect x="210" y="150" width="604" height="724" rx="120" fill="#FFFFFF"/>
+
+    <rect x="290" y="230" width="444" height="166" rx="64" fill="#4285F4"/>
+    <rect x="670" y="274" width="32" height="76" rx="16" fill="#FFFFFF" opacity="0.95"/>
+
+    <circle cx="386" cy="532" r="88" fill="#EA4335"/>
+    <circle cx="638" cy="532" r="88" fill="#FBBC05"/>
+    <circle cx="386" cy="748" r="88" fill="#4285F4"/>
+    <circle cx="638" cy="748" r="88" fill="#34A853"/>
+
+    <path d="M350 532H422M386 496V568" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+    <path d="M602 532H674" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+    <path d="M354 716L418 780M418 716L354 780" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+    <path d="M602 748H674" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="638" cy="708" r="12" fill="#FFFFFF"/>
+    <circle cx="638" cy="788" r="12" fill="#FFFFFF"/>
+  </g>
+</svg>
