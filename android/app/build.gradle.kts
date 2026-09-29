@@ -42,20 +42,21 @@ android {
                 storeFile = file(
                     keystoreProperties.getProperty("storeFile"),
                 )
-                storePassword =
-                    keystoreProperties.getProperty("storePassword")
+                storePassword = keystoreProperties.getProperty("storePassword")
             }
         }
     }
 
     buildTypes {
         release {
-            signingConfig =
-                if (hasReleaseKeystore) {
-                    signingConfigs.getByName("release")
-                } else {
-                    signingConfigs.getByName("debug")
-                }
+            if (!hasReleaseKeystore) {
+                throw GradleException(
+                    "Release signing configuration missing. " +
+                            "Create android/key.properties before building a release.",
+                )
+            }
+
+            signingConfig = signingConfigs.getByName("release")
 
             isMinifyEnabled = false
             isShrinkResources = false

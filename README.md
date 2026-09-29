@@ -1,17 +1,58 @@
-# calculator
+# Calculator
 
-A new Flutter project.
+A lightweight, fast, and responsive calculator application developed by Bitmint Lab.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Basic arithmetic calculations
+- Calculation history
+- Light and dark theme support
+- Persistent local preferences
+- Responsive interface
+- Android support
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Flutter
+- Dart
+- Shared Preferences
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Android Package
+
+`in.bitmint.calculator`
+
+## Development
+
+Install dependencies:
+
+    flutter pub get
+
+Run the application:
+
+    flutter run
+
+Run tests:
+
+    flutter test
+
+Analyze the project:
+
+    flutter analyze
+
+Build Android App Bundle:
+
+    flutter build appbundle --release
+
+## Release Signing
+
+Android release builds require a local `android/key.properties` file and release keystore.
+
+Signing credentials and keystore files must never be committed to source control.
+
+## Developer
+
+Bitmint Lab
+
+## License
+
+All rights reserved.
