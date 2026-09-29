@@ -67,3 +67,18 @@ android/app/*.keystore
 
 # VS Code local settings
 .vscode/
+
+
+# Android generated reports
+/android/build/
+/android/.gradle/
+/android/build/reports/
+
+# APK and AAB output
+*.apk
+*.aab
+
+# Signing secrets
+/android/key.properties
+*.jks
+*.keystore
